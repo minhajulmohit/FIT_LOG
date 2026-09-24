@@ -19,7 +19,7 @@ const Hero = () => {
             BROWSE WORKOUTS
           </button>
         </div>
-        <Image src={HeroImage} alt="Hero image"></Image>
+        <Image src={HeroImage} alt="Hero image" priority></Image>
       </div>
     </div>
   );

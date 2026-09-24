@@ -2,7 +2,7 @@ import Image from "next/image";
 import Logo from "@/assets/logo.png";
 const Footer = () => {
   return (
-    <footer className="border-t-2">
+    <footer className="border-t-2 mt-10">
       <div className=" flex justify-between container mx-auto items-center py-3">
         <div className="flex items-center">
           <Image

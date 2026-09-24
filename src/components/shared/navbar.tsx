@@ -78,9 +78,9 @@ const NavigationBar = () => {
             {Links}
           </ul>
         </div>
-        <div className="navbar-end gap-5">
+        <div className="navbar-end gap-1 md:gap-5">
           <Link href={"/myplan"} className="text-white">
-            <p className="flex flex-row items-center justify-center gap-2">
+            <p className="flex flex-row items-center justify-center gap-1">
               Plan
               <span className="bg-[#C2F800] rounded-full w-6 h-6 flex justify-center items-center text-black">
                 0
@@ -88,8 +88,8 @@ const NavigationBar = () => {
             </p>
           </Link>
           <Link href={"/myplan"} className=" text-slate-400">
-            <p className="flex flex-row items-center justify-center gap-2">
-              Saved{" "}
+            <p className="flex flex-row items-center justify-center gap-1">
+              Saved
               <span className="bg-none border border-slate-400 rounded-full w-6 h-6 flex justify-center items-center text-white">
                 0
               </span>
