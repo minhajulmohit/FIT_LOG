@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "../../../public/logo.png";
+import Logo from "@/assets/logo.png";
 const Footer = () => {
   return (
     <footer className="border-t-2">
@@ -17,7 +17,7 @@ const Footer = () => {
         <p className="text-slate-400 text-[9px] md:text-[18px] lg:text-[20px]">
           © 2026 FitLog — Workout Library. Train hard, log honest.
         </p>
-      </div>{" "}
+      </div>
     </footer>
   );
 };

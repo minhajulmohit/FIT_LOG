@@ -1,17 +1,40 @@
+"use client";
 import Image from "next/image";
-import Logo from "../../../public/logo.png";
+import Logo from "@/assets/logo.png";
 import Link from "next/link";
-const Links = (
-  <>
-    <li>
-      <Link href={"/"}>Workouts</Link>
-    </li>
-    <li>
-      <Link href={"/myplan"}>My Plan</Link>
-    </li>
-  </>
-);
-const NavigationBer = () => {
+import { usePathname } from "next/navigation";
+
+const NavigationBar = () => {
+  const pathname = usePathname();
+  const Links = (
+    <>
+      <li>
+        <Link
+          className={
+            pathname === "/"
+              ? "text-[#c2f800] bg-[#c2f80020] rounded-2xl font-semibold "
+              : ""
+          }
+          href={"/"}
+        >
+          Workouts
+        </Link>
+      </li>
+      <li>
+        <Link
+          className={
+            pathname === "/myplan"
+              ? "text-[#c2f800] bg-[#c2f80020] rounded-2xl font-semibold "
+              : ""
+          }
+          href={"/myplan"}
+        >
+          My Plan
+        </Link>
+      </li>
+    </>
+  );
+
   return (
     <nav className="navbar bg-[#0f1115] shadow-sm border-b-2">
       <div className="flex justify-between container mx-auto">
@@ -30,13 +53,12 @@ const NavigationBer = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                {" "}
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
-                />{" "}
+                />
               </svg>
             </div>
             <ul
@@ -52,7 +74,7 @@ const NavigationBer = () => {
           </h3>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-slate-400 gap-5">
+          <ul className="menu menu-horizontal px-1 text-slate-400 gap-3">
             {Links}
           </ul>
         </div>
@@ -79,4 +101,4 @@ const NavigationBer = () => {
   );
 };
 
-export default NavigationBer;
+export default NavigationBar;
