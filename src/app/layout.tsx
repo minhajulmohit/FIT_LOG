@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavigationBer from "@/components/shared/navber";
 import { Oswald, Inter } from "next/font/google";
+import Footer from "@/components/shared/footer";
 const oswald = Oswald({
   variable: "--font-oswald",
   subsets: ["latin"],
@@ -24,8 +25,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${inter.variable} ${oswald.variable} h-full antialiased`}
     >
-      <NavigationBer></NavigationBer>
-      <body className="min-h-full flex flex-col bg-[#0f1115]">{children}</body>
+      <body className="min-h-screen flex flex-col bg-[#0f1115]">
+        <NavigationBer></NavigationBer>
+        <main className="flex-1">{children}</main>
+        <Footer></Footer>
+      </body>
     </html>
   );
 }

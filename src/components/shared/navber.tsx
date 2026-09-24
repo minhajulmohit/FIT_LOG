@@ -3,8 +3,12 @@ import Logo from "../../../public/logo.png";
 import Link from "next/link";
 const Links = (
   <>
-    <li>Workouts</li>
-    <li>My Plan</li>
+    <li>
+      <Link href={"/"}>Workouts</Link>
+    </li>
+    <li>
+      <Link href={"/myplan"}>My Plan</Link>
+    </li>
   </>
 );
 const NavigationBer = () => {
@@ -42,7 +46,7 @@ const NavigationBer = () => {
               {Links}
             </ul>
           </div>
-          <Image className="w-5 md:w-8" src={Logo} alt="Logo" />
+          <Image className="w-5 md:w-8 mr-1" src={Logo} alt="Logo" />
           <h3 className="font-oswald text-xl md:text-2xl lg:text-3xl font-bold text-white">
             FITLOG
           </h3>
@@ -53,7 +57,7 @@ const NavigationBer = () => {
           </ul>
         </div>
         <div className="navbar-end gap-5">
-          <Link href={"/myPlan"} className="text-white">
+          <Link href={"/myplan"} className="text-white">
             <p className="flex flex-row items-center justify-center gap-2">
               Plan
               <span className="bg-[#C2F800] rounded-full w-6 h-6 flex justify-center items-center text-black">
@@ -61,13 +65,13 @@ const NavigationBer = () => {
               </span>
             </p>
           </Link>
-          <Link href={"/myPlan"} className=" text-slate-400">
+          <Link href={"/myplan"} className=" text-slate-400">
             <p className="flex flex-row items-center justify-center gap-2">
               Saved{" "}
               <span className="bg-none border border-slate-400 rounded-full w-6 h-6 flex justify-center items-center text-white">
                 0
               </span>
-            </p> 
+            </p>
           </Link>
         </div>
       </div>
