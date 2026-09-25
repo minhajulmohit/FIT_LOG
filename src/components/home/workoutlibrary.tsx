@@ -15,12 +15,11 @@ const TheLibrary = async () => {
           Twelve lifts covering every major muscle group.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 ">
         {workouts.map((workout: TWorkout) => (
-          <WorkoutLibraryCard
-            key={workout.id}
-            workout={workout}
-          ></WorkoutLibraryCard>
+          <div key={workout.id}>
+            <WorkoutLibraryCard workout={workout}></WorkoutLibraryCard>
+          </div>
         ))}
       </div>
     </div>
