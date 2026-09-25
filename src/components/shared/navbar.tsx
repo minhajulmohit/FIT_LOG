@@ -3,8 +3,11 @@ import Image from "next/image";
 import Logo from "@/assets/logo.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useContext } from "react";
+import { workoutContext } from "@/app/context/workoutprovider";
 
 const NavigationBar = () => {
+  const { todaysWorkout, savedWorkout } = useContext(workoutContext);
   const pathname = usePathname();
   const Links = (
     <>
@@ -83,7 +86,7 @@ const NavigationBar = () => {
             <p className="flex flex-row items-center justify-center gap-1">
               Plan
               <span className="bg-[#C2F800] rounded-full w-6 h-6 flex justify-center items-center text-black">
-                0
+                {todaysWorkout.length}
               </span>
             </p>
           </Link>
@@ -91,7 +94,7 @@ const NavigationBar = () => {
             <p className="flex flex-row items-center justify-center gap-1">
               Saved
               <span className="bg-none border border-slate-400 rounded-full w-6 h-6 flex justify-center items-center text-white">
-                0
+                {savedWorkout.length}
               </span>
             </p>
           </Link>

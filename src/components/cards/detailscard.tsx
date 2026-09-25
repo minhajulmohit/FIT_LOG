@@ -1,19 +1,22 @@
 import { TWorkout } from "@/types";
 import Image from "next/image";
+import AddTodaysWorkoutBtn from "../buttons/addtodaysplan";
+import SaveForLaterBtn from "../buttons/saveforlater";
 
 type TWorkoutDetailsProps = { workoutDetails: TWorkout };
 
 const WorkoutDetailsCard = ({ workoutDetails }: TWorkoutDetailsProps) => {
   return (
-    <div className="container mx-auto grid grid-cols-2 mt-10 gap-10">
+    <div className="container mx-auto grid  grid-cols-1 md:grid-cols-2 mt-10 gap-10">
       <Image
         src={workoutDetails.image}
         alt={workoutDetails.name}
         width={700}
         height={350}
+        priority
         className="h-full w-full rounded-2xl"
       ></Image>
-      <div className="text-slate-400 flex flex-col gap-3">
+      <div className="text-slate-400 flex flex-col gap-3 mx-2 md:mx-0">
         <h1 className="text-white uppercase font-oswald text-3xl font-bold">
           {workoutDetails.name}
         </h1>
@@ -90,10 +93,11 @@ const WorkoutDetailsCard = ({ workoutDetails }: TWorkoutDetailsProps) => {
             </li>
           ))}
         </ol>
-        <div>
-          <button>ww</button>
-
-          <button>ww</button>
+        <div className="flex flex-col md:flex md:flex-row gap-4 ">
+          <AddTodaysWorkoutBtn
+            workoutDetails={workoutDetails}
+          ></AddTodaysWorkoutBtn>
+          <SaveForLaterBtn workoutDetails={workoutDetails}></SaveForLaterBtn>
         </div>
       </div>
     </div>
