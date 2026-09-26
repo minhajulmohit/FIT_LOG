@@ -1,22 +1,16 @@
-"use client";
-import { workoutContext } from "@/app/context/workoutprovider";
 import { TWorkout } from "@/types";
-import { useContext } from "react";
 import SaveLaterWorkoutCard from "../cards/savelaterworkoutcard";
 import Link from "next/link";
 
-
-const SaveLaterPlan = () => {
-  const { savedWorkout } = useContext(workoutContext);
-
-  if (savedWorkout.length === 0) {
+const SaveLaterPlan = ({ workouts }: { workouts: TWorkout[] }) => {
+  if (workouts.length === 0) {
     return (
       <div className=" border border-dashed border-slate-700 rounded-2xl py-20 text-center mt-5 flex flex-col items-center gap-2">
         <p className="text-white uppercase font-oswald text-2xl">
           Nothing here yet
         </p>
         <p className="text-slate-400">
-          Browse the library and a lift to get today moving.
+          Browse the library and add a lift to get today moving.
         </p>
         <Link
           href={"/"}
@@ -30,7 +24,7 @@ const SaveLaterPlan = () => {
 
   return (
     <div className="mt-5 space-y-4">
-      {savedWorkout.map((workout: TWorkout) => (
+      {workouts.map((workout: TWorkout) => (
         <SaveLaterWorkoutCard key={workout.id} workout={workout} />
       ))}
     </div>

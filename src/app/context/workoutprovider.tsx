@@ -8,6 +8,8 @@ type TWorkoutContext = {
   setSavedWorkout: React.Dispatch<React.SetStateAction<TWorkout[]>>;
   activeTab: "today" | "saved";
   setActiveTab: React.Dispatch<React.SetStateAction<"today" | "saved">>;
+    doneWorkoutIds: number[];
+  setDoneWorkoutIds: React.Dispatch<React.SetStateAction<number[]>>;
 };
 export const workoutContext = createContext<TWorkoutContext>({
   todaysWorkout: [],
@@ -16,12 +18,15 @@ export const workoutContext = createContext<TWorkoutContext>({
   setSavedWorkout: () => {},
   activeTab: "today",
   setActiveTab: () => {},
+    doneWorkoutIds: [],
+  setDoneWorkoutIds: () => {},
 });
 
 const WorkoutProvider = ({ children }: { children: React.ReactNode }) => {
   const [todaysWorkout, setTodaysWorkout] = useState<TWorkout[]>([]);
   const [savedWorkout, setSavedWorkout] = useState<TWorkout[]>([]);
   const [activeTab, setActiveTab] = useState<"today" | "saved">("today");
+    const [doneWorkoutIds, setDoneWorkoutIds] = useState<number[]>([]);
   const value = {
     todaysWorkout,
     setTodaysWorkout,
@@ -29,6 +34,8 @@ const WorkoutProvider = ({ children }: { children: React.ReactNode }) => {
     setSavedWorkout,
     activeTab,
     setActiveTab,
+    doneWorkoutIds,
+    setDoneWorkoutIds,
   };
   return (
     <workoutContext.Provider value={value}>{children}</workoutContext.Provider>
