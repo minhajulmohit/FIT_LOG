@@ -43,7 +43,7 @@ The interface follows a dark fitness-focused design with responsive layouts for 
 
 ## 🌐 Live Project
 
-**Live Demo:**
+**Live Demo:**https://fit-log-mohit-ff5c.vercel.app/
 
 ## 👨‍💻 Author
 
