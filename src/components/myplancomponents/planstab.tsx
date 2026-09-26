@@ -20,7 +20,7 @@ const PlansTab = () => {
     if (sortBy === "rating") {
       return b.rating - a.rating;
     }
-    return;
+    return 0;
   });
 
   return (
