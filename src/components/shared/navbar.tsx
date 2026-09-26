@@ -25,6 +25,7 @@ const NavigationBar = () => {
       </li>
       <li>
         <Link
+          scroll={false}
           className={
             pathname === "/myplan"
               ? "text-[#c2f800] bg-[#c2f80020] rounded-2xl font-semibold "
@@ -82,7 +83,7 @@ const NavigationBar = () => {
           </ul>
         </div>
         <div className="navbar-end gap-1 md:gap-5">
-          <Link href={"/myplan"} className="text-white">
+          <Link scroll={false} href={"/myplan"} className="text-white">
             <p className="flex flex-row items-center justify-center gap-1">
               Plan
               <span className="bg-[#C2F800] rounded-full w-6 h-6 flex justify-center items-center text-black">
@@ -90,7 +91,7 @@ const NavigationBar = () => {
               </span>
             </p>
           </Link>
-          <Link href={"/myplan"} className=" text-slate-400">
+          <Link scroll={false} href={"/myplan"} className=" text-slate-400">
             <p className="flex flex-row items-center justify-center gap-1">
               Saved
               <span className="bg-none border border-slate-400 rounded-full w-6 h-6 flex justify-center items-center text-white">
